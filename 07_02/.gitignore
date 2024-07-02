@@ -1,0 +1,4 @@
+env
+/package-lock.json
+/server.cert
+/server.key
