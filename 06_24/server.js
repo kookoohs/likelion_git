@@ -1,7 +1,6 @@
 const mongoclient = require("mongodb").MongoClient;
 const ObjId = require("mongodb").ObjectId;
-const url =`mongodb+srv://admin:1234@cluster0.2kfyjjo.mongodb.net/
-  ?retryWrites=true&w=majority&appName=Cluster0`;
+const url =`mongodb+srv://admin:1234@cluster0.sew10gw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 let mydb;
 mongoclient
@@ -12,7 +11,7 @@ mongoclient
     //     console.log(result);
     // })
 
-    app.listen(8080, function () {
+    app.listen(3306, function () {
       console.log("포트 8080으로 서버 대기중 ... ");
     });
   })
@@ -23,9 +22,9 @@ mongoclient
 // MySQL + nodejs 접속 코드
 var mysql = require("mysql");
 var conn = mysql.createConnection({
-  host: "localhost",
+  host: "18.191.25.55",
   user: "root",
-  password: "0228",
+  password: "",
   database: "myboard",
 });
 
