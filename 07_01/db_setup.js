@@ -11,14 +11,11 @@ const setup = async () => {
     }
 
     try {
-        // 환경 변수가 제대로 로드되었는지 확인하는 로그
-        console.log("MongoDB URL:", process.env.MONGO_DB_URL);
-        console.log("MySQL Host:", process.env.MYSQL_HOST);
-
         const mongoDbUrl = process.env.MONGO_DB_URL;
         const mongoConn = await MongoClient.connect(mongoDbUrl, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            tlsAllowInvalidCertificates: true  // TLS/SSL 설정 추가
         });
         mongodb = mongoConn.db(process.env.MONGO_DB);
         console.log("몽고DB 접속 성공");
